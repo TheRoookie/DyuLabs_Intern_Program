@@ -2,7 +2,7 @@
 
 
 
-void bubble_Sort(int *arr);
+void bubble_Sort(int *arr,int size);
 void printArray(int *array ,int size);
 
 
