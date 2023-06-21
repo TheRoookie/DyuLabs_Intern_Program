@@ -3,11 +3,11 @@ This Repository is for tracking learning progress for individual and organisatio
 
 # Instructions for Compilation and Proper Running the Code.(For Linux only)
 
-Step 1 : Go to the Directory containing the *.c file.
+## Step 1 : Go to the Directory containing the *.c file.
 
-Step 2 : Open Terminal in the current directory.
+## Step 2 : Open Terminal in the current directory.
 
-Step 3 : Enter Command , replace FILE_NAME by name of the *.c file that you want to execute. 
+## Step 3 : Enter Command , replace FILE_NAME by name of the *.c file that you want to execute. 
 Commmand :
 #
                 gcc FILE_NAME.c -o FILE_NAME && ./FILE_NAME
