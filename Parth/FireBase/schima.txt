@@ -1,0 +1,2 @@
+col->DocID->(map)->(map)->(number,timestamp,number,number,timestamp)
+customers->mobile->IMEI(map)-> macAdd(map)->(activeTime,installTime ,load,uniqueID, updateTime)
