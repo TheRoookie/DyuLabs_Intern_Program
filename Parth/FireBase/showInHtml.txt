@@ -1,0 +1,12 @@
+The IMEI
+All unique ID(documents)
+    activeTime
+    installationTime
+    load
+    macID
+    updateTime
+
+profile(document)
+    location
+    user1
+    user2

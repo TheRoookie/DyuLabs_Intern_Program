@@ -1,10 +1,10 @@
-import { initializeApp } from "firebase/app"
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 import {
     collection,
     getDocs,
     getFirestore,
     addDoc
-} from "firebase/firestore"
+} from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -23,33 +23,30 @@ initializeApp(firebaseConfig)
 //database obj
 const db = getFirestore()
 
-// colection ref
-const col = collection(db, "books")
+var IMEI = ""
+var nodes = new Array()
+var location = ""
+var users = new Array()
 
-//doc
-getDocs(col)
-    .then((snap) => {
-        let cole = []
-        snap.docs.forEach((doc) => {
-            cole.push({
-                ...doc.data(), id: doc.id
-            })
-        })
-        console.log(cole)
+
+document.getElementById("loginForm").addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert(IMEI)
+    IMEI = document.forms["loginForm"]["gwid"].value
+    const col = collection(db, IMEI)
+
+    getDocs(col).then((snapshot) => {
+        if (!snapshot.empty) {
+            console.log("Document data: ", snapshot.docs[0].data());
+
+
+
+
+            document.getElementById("IMEI").innerHTML += IMEI
+
+
+        } else {
+            alert("IMEI not found!")
+        }
     })
-    .catch(err => {
-        console.log("Custom Error =>" + err)
-    })
-//Add document
-const addData = document.querySelector('.add')
-alert(addData)
-addData.addEventListener('submit', (e) => {
-    e.preventDefault()
-    addDoc(col, {
-        title: addData.title.value,
-        author: addData.author.value
-    })
-        .then(() => {
-            addData.reset()
-        })
 })
